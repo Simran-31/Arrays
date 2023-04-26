@@ -1,0 +1,29 @@
+//FIRST APPROACH
+pair<long long, long long> getMinMax(long long a[], int n) {
+   sort(a,a+n);
+   pair<long long,long long>ans;
+   ans.first=a[0];
+   ans.second=a[n-1];
+   return ans;
+}
+//SECOND APPROACH
+
+
+pair<long long, long long> getMinMax(long long a[], int n) {
+   long long int mine=INT_MAX;
+   long long int maxe=INT_MIN;
+   for(int i=0;i<n;i++){
+       if(a[i]>maxe){
+           maxe=a[i];
+       }
+   }
+   for(int i=0;i<n;i++){
+       if(a[i]<mine){
+           mine=a[i];
+       }
+   }
+   pair<long long,long long>ans;
+   ans.first=mine;
+   ans.second=maxe;
+   return ans;
+}
